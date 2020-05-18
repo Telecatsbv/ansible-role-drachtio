@@ -1,0 +1,20 @@
+---
+- hosts: test_host
+  remote_user: devops
+  become: yes
+  roles:
+    - ansible-role-drachtio
+  vars:
+    drachtioAdminPort: 9022
+    drachtioSecret: cymru
+    drachtioSipInterface: eth0
+    drachtioAdminInterface: eth0
+    drachtioLogFilePattern: drachtio.log
+    drachtioLogArchiveDirectory: /var/log/drachtio/archive
+    drachtioLogFileSize: 30
+    drachtioLogFileMaxSize: 1000
+    drachtioLogFileDirectory: /var/log/drachtio
+    drachtioHttpHandler: 127.0.0.1:3000
+    drachtioBranch: v0.8.4
+    cloud_provider: none
+    remove_source: false
